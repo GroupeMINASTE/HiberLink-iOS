@@ -7,9 +7,9 @@
 */
 
 "upload_title" = "Generate";
-"upload_input" = "Enter an URL...";
+"upload_input" = "Enter an URL…";
 "upload_generate" = "Generate";
-"upload_generating" = "Generating...";
+"upload_generating" = "Generating…";
 "upload_output" = "Generated link will be shown here";
 "upload_copy" = "Copy generated link";
 "upload_error" = "An error occurred!";
