@@ -9,16 +9,26 @@
 import UIKit
 
 class TabBarController: UITabBarController {
+    
+    let upload = UploadViewController()
+    let history = HistoryTableViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Give delegates
+        upload.delegate = history
+        
         // Init upload
-        let upload = UINavigationController(rootViewController: UploadViewController())
-        upload.tabBarItem = UITabBarItem(title: "upload_title".localized(), image: UIImage(named: "Upload"), tag: 0)
+        let uploadNav = UINavigationController(rootViewController: upload)
+        uploadNav.tabBarItem = UITabBarItem(title: "upload_title".localized(), image: UIImage(named: "Upload"), tag: 0)
+        
+        // Init history
+        let historyNav = UINavigationController(rootViewController: history)
+        historyNav.tabBarItem = UITabBarItem(title: "history_title".localized(), image: UIImage(named: "History"), tag: 0)
 
         // Add everything to tab bar
-        viewControllers = [upload]
+        viewControllers = [uploadNav, historyNav]
         
         // Load views
         for viewController in viewControllers ?? [] {

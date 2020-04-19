@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,10 @@
 		6A3F5005244BB37D0052EB7D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F5004244BB37D0052EB7D /* StringExtension.swift */; };
 		6A3F5008244BB3C00052EB7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A3F500A244BB3C00052EB7D /* Localizable.strings */; };
 		6A3F500C244BB4420052EB7D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F500B244BB4420052EB7D /* UIColorExtension.swift */; };
+		6AB0B542244BC08700E403AE /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 6AB0B541244BC08700E403AE /* SQLite */; };
+		6AB0B544244BC09300E403AE /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0B543244BC09300E403AE /* Database.swift */; };
+		6AB0B546244BC3C300E403AE /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0B545244BC3C300E403AE /* HistoryTableViewController.swift */; };
+		6AB0B548244BC6DD00E403AE /* SubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0B547244BC6DD00E403AE /* SubtitleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		6A3F5004244BB37D0052EB7D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		6A3F5009244BB3C00052EB7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6A3F500B244BB4420052EB7D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		6AB0B543244BC09300E403AE /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		6AB0B545244BC3C300E403AE /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		6AB0B547244BC6DD00E403AE /* SubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleTableViewCell.swift; sourceTree = "<group>"; };
+		6AB0B549244BCB7300E403AE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AB0B542244BC08700E403AE /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				6A3F4FE4244BAFEA0052EB7D /* AppDelegate.swift */,
+				6AB0B543244BC09300E403AE /* Database.swift */,
+				6AB0B547244BC6DD00E403AE /* SubtitleTableViewCell.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -89,6 +100,7 @@
 			children = (
 				6A3F4FFB244BB07D0052EB7D /* TabBarController.swift */,
 				6A3F5001244BB2910052EB7D /* UploadViewController.swift */,
+				6AB0B545244BC3C300E403AE /* HistoryTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -127,6 +139,9 @@
 			dependencies = (
 			);
 			name = HiberLink;
+			packageProductDependencies = (
+				6AB0B541244BC08700E403AE /* SQLite */,
+			);
 			productName = HiberLink;
 			productReference = 6A3F4FE1244BAFEA0052EB7D /* HiberLink.app */;
 			productType = "com.apple.product-type.application";
@@ -153,8 +168,12 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 6A3F4FD8244BAFEA0052EB7D;
+			packageReferences = (
+				6AB0B540244BC08700E403AE /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+			);
 			productRefGroup = 6A3F4FE2244BAFEA0052EB7D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -187,7 +206,10 @@
 				6A3F5002244BB2910052EB7D /* UploadViewController.swift in Sources */,
 				6A3F5005244BB37D0052EB7D /* StringExtension.swift in Sources */,
 				6A3F4FFE244BB0B10052EB7D /* APIRequest.swift in Sources */,
+				6AB0B546244BC3C300E403AE /* HistoryTableViewController.swift in Sources */,
 				6A3F4FFC244BB07D0052EB7D /* TabBarController.swift in Sources */,
+				6AB0B548244BC6DD00E403AE /* SubtitleTableViewCell.swift in Sources */,
+				6AB0B544244BC09300E403AE /* Database.swift in Sources */,
 				6A3F5000244BB0ED0052EB7D /* APIResponseStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +229,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6A3F5009244BB3C00052EB7D /* en */,
+				6AB0B549244BCB7300E403AE /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -218,6 +241,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -278,6 +302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -335,6 +360,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL9396WK65;
 				INFOPLIST_FILE = HiberLink/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -353,6 +379,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZL9396WK65;
 				INFOPLIST_FILE = HiberLink/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,6 +413,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6AB0B540244BC08700E403AE /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.12.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6AB0B541244BC08700E403AE /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6AB0B540244BC08700E403AE /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6A3F4FD9244BAFEA0052EB7D /* Project object */;
 }

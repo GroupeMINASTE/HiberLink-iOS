@@ -17,6 +17,7 @@ class UploadViewController: UIViewController, UITextFieldDelegate {
     let output = UITextField()
     let copy = UIButton()
     var bottomConstraint: NSLayoutConstraint!
+    weak var delegate: HistoryDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,7 +104,7 @@ class UploadViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func buttonClicked(_ sender: UIButton) {
-        if sender == generate, let url = input.text {
+        if sender == generate, let url = input.text, !url.isEmpty {
             // Disable
             generate.isEnabled = false
             
@@ -113,6 +114,12 @@ class UploadViewController: UIViewController, UITextFieldDelegate {
                 if let string = string {
                     // Show generated link
                     self.output.text = string
+                    
+                    // Add it to database
+                    Database.current.addLink((string, url))
+                    
+                    // Notify delegate
+                    self.delegate?.loadContent()
                     
                     // Select it
                     self.output.becomeFirstResponder()
@@ -125,13 +132,18 @@ class UploadViewController: UIViewController, UITextFieldDelegate {
                 // Enable again
                 self.generate.isEnabled = true
             }
-        } else if sender == copy {
+        } else if sender == copy, let url = output.text, !url.isEmpty {
             // Select it
             output.becomeFirstResponder()
             output.selectAll(nil)
             
             // Copy link
-            UIPasteboard.general.string = output.text
+            UIPasteboard.general.string = url
+            
+            // Show confirmation
+            let alert = UIAlertController(title: "copied_title".localized(), message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "copied_close".localized(), style: .default) { action in })
+            present(alert, animated: true, completion: nil)
         }
     }
     
@@ -155,4 +167,10 @@ class UploadViewController: UIViewController, UITextFieldDelegate {
         return false
     }
 
+}
+
+protocol HistoryDelegate: class {
+    
+    func loadContent()
+    
 }

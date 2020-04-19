@@ -6,10 +6,14 @@
   Copyright © 2020 Nathan FALLET. All rights reserved.
 */
 
-"upload_title" = "Upload";
+"upload_title" = "Generate";
 "upload_input" = "Enter an URL...";
 "upload_generate" = "Generate";
 "upload_generating" = "Generating...";
 "upload_output" = "Generated link will be shown here";
 "upload_copy" = "Copy generated link";
 "upload_error" = "An error occurred!";
+"history_title" = "History";
+"history_clear" = "Clear";
+"copied_title" = "Link copied!";
+"copied_close" = "Close";
