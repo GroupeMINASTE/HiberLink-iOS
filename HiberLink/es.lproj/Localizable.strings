@@ -1,1 +1,11 @@
-
+"copied_close" = "Cerrar";
+"copied_title" = "¡Enlace copiado!";
+"history_clear" = "Vaciar";
+"history_title" = "Historial";
+"upload_error" = "¡Un error ocurrió!";
+"upload_copy" = "Copiar el enlace generado";
+"upload_output" = "El enlace generado será aquí";
+"upload_generating" = "Generación…";
+"upload_generate" = "Generar";
+"upload_input" = "Entrar un enlace…";
+"upload_title" = "Generar";
