@@ -83,7 +83,11 @@ class UploadViewController: UIViewController, UITextFieldDelegate {
         output.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor, constant: -15).isActive = true
         output.placeholder = "upload_output".localized()
         output.textAlignment = .center
-        output.isEnabled = false
+        output.autocorrectionType = .no
+        output.autocapitalizationType = .none
+        output.returnKeyType = .done
+        output.keyboardType = .URL
+        output.delegate = self
         
         copy.translatesAutoresizingMaskIntoConstraints = false
         copy.topAnchor.constraint(equalTo: output.bottomAnchor, constant: 15).isActive = true
@@ -106,6 +110,7 @@ class UploadViewController: UIViewController, UITextFieldDelegate {
     @objc func buttonClicked(_ sender: UIButton) {
         if sender == generate, let url = input.text, !url.isEmpty {
             // Disable
+            input.endEditing(true)
             generate.isEnabled = false
             
             // Generate a link
@@ -165,6 +170,10 @@ class UploadViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
         return false
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return textField != output
     }
 
 }
