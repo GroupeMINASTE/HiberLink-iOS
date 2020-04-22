@@ -17,6 +17,7 @@
 		6A3F5005244BB37D0052EB7D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F5004244BB37D0052EB7D /* StringExtension.swift */; };
 		6A3F5008244BB3C00052EB7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A3F500A244BB3C00052EB7D /* Localizable.strings */; };
 		6A3F500C244BB4420052EB7D /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F500B244BB4420052EB7D /* UIColorExtension.swift */; };
+		6A84C48724510ED800411174 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A84C48624510ED800411174 /* LabelTableViewCell.swift */; };
 		6AB0B542244BC08700E403AE /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 6AB0B541244BC08700E403AE /* SQLite */; };
 		6AB0B544244BC09300E403AE /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0B543244BC09300E403AE /* Database.swift */; };
 		6AB0B546244BC3C300E403AE /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0B545244BC3C300E403AE /* HistoryTableViewController.swift */; };
@@ -37,6 +38,8 @@
 		6A3F5009244BB3C00052EB7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6A3F500B244BB4420052EB7D /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		6A426F7C244C573200A57927 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6A84C48424510E5A00411174 /* HiberLink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HiberLink.entitlements; sourceTree = "<group>"; };
+		6A84C48624510ED800411174 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		6AB0B543244BC09300E403AE /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		6AB0B545244BC3C300E403AE /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		6AB0B547244BC6DD00E403AE /* SubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleTableViewCell.swift; sourceTree = "<group>"; };
@@ -75,10 +78,12 @@
 			isa = PBXGroup;
 			children = (
 				6A3F4FFA244BB0110052EB7D /* API */,
+				6A84C48524510EBC00411174 /* Cells */,
 				6A3F4FF9244BB0090052EB7D /* Controllers */,
 				6A3F5003244BB3680052EB7D /* Extensions */,
 				6A3F4FF8244BB0000052EB7D /* Utils */,
 				6A3F4FED244BAFEE0052EB7D /* Assets.xcassets */,
+				6A84C48424510E5A00411174 /* HiberLink.entitlements */,
 				6A3F4FEF244BAFEE0052EB7D /* LaunchScreen.storyboard */,
 				6A3F500A244BB3C00052EB7D /* Localizable.strings */,
 				6A3F4FF2244BAFEE0052EB7D /* Info.plist */,
@@ -91,7 +96,6 @@
 			children = (
 				6A3F4FE4244BAFEA0052EB7D /* AppDelegate.swift */,
 				6AB0B543244BC09300E403AE /* Database.swift */,
-				6AB0B547244BC6DD00E403AE /* SubtitleTableViewCell.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -122,6 +126,15 @@
 				6A3F500B244BB4420052EB7D /* UIColorExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6A84C48524510EBC00411174 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6A84C48624510ED800411174 /* LabelTableViewCell.swift */,
+				6AB0B547244BC6DD00E403AE /* SubtitleTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +221,7 @@
 				6A3F5002244BB2910052EB7D /* UploadViewController.swift in Sources */,
 				6A3F5005244BB37D0052EB7D /* StringExtension.swift in Sources */,
 				6A3F4FFE244BB0B10052EB7D /* APIRequest.swift in Sources */,
+				6A84C48724510ED800411174 /* LabelTableViewCell.swift in Sources */,
 				6AB0B546244BC3C300E403AE /* HistoryTableViewController.swift in Sources */,
 				6A3F4FFC244BB07D0052EB7D /* TabBarController.swift in Sources */,
 				6AB0B548244BC6DD00E403AE /* SubtitleTableViewCell.swift in Sources */,
@@ -360,6 +374,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HiberLink/HiberLink.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = ZL9396WK65;
@@ -381,6 +396,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HiberLink/HiberLink.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = ZL9396WK65;

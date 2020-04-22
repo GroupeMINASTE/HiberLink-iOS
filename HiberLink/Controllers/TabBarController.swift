@@ -11,7 +11,7 @@ import UIKit
 class TabBarController: UITabBarController {
     
     let upload = UploadViewController()
-    let history = HistoryTableViewController()
+    let history = HistoryTableViewController(style: .grouped)
 
     override func viewDidLoad() {
         super.viewDidLoad()

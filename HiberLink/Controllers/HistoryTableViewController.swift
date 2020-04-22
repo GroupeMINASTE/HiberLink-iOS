@@ -19,7 +19,8 @@ class HistoryTableViewController: UITableViewController, HistoryDelegate {
         navigationItem.title = "history_title".localized()
         
         // Register cells
-        tableView.register(SubtitleTableViewCell.self, forCellReuseIdentifier: "labelCell")
+        tableView.register(SubtitleTableViewCell.self, forCellReuseIdentifier: "subtitleCell")
+        tableView.register(LabelTableViewCell.self, forCellReuseIdentifier: "labelCell")
         
         // Clear button
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "history_clear".localized(), style: .plain, target: self, action: #selector(clear(_:)))
@@ -56,32 +57,78 @@ class HistoryTableViewController: UITableViewController, HistoryDelegate {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return links.count
+        return section == 0 ? links.count : 4
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "history_title".localized() : "more_title".localized()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath)
-        let link = links[indexPath.row]
-        
-        cell.textLabel?.text = link.0
-        cell.detailTextLabel?.text = link.1
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "subtitleCell", for: indexPath)
+            let link = links[indexPath.row]
+            
+            cell.textLabel?.text = link.0
+            cell.detailTextLabel?.text = link.1
 
-        return cell
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath)
+            
+            switch indexPath.row {
+            case 0:
+                cell.textLabel?.text = "HiberFile"
+            case 1:
+                cell.textLabel?.text = "Groupe MINASTE"
+            case 2:
+                cell.textLabel?.text = "more_translate".localized()
+            case 3:
+                cell.textLabel?.text = "more_source_code".localized()
+            default:
+                fatalError()
+            }
+
+            return cell
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Copy link
-        let link = links[indexPath.row]
-        UIPasteboard.general.string = link.0
-        
-        // Show confirmation
-        let alert = UIAlertController(title: "copied_title".localized(), message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "copied_close".localized(), style: .default) { action in })
-        present(alert, animated: true, completion: nil)
+        if indexPath.section == 0 {
+            // Copy link
+            let link = links[indexPath.row]
+            UIPasteboard.general.string = link.0
+            
+            // Show confirmation
+            let alert = UIAlertController(title: "copied_title".localized(), message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "copied_close".localized(), style: .default) { action in })
+            present(alert, animated: true, completion: nil)
+        } else {
+            switch indexPath.row {
+            case 0:
+                if let url = URL(string: "https://hiberfile.com") {
+                    UIApplication.shared.open(url)
+                }
+            case 1:
+                if let url = URL(string: "https://www.groupe-minaste.org") {
+                    UIApplication.shared.open(url)
+                }
+            case 2:
+                if let url = URL(string: "https://weblate.groupe-minaste.org/projects/hiberlink/") {
+                    UIApplication.shared.open(url)
+                }
+            case 3:
+                if let url = URL(string: "https://github.com/GroupeMINASTE/HiberLink-iOS") {
+                    UIApplication.shared.open(url)
+                }
+            default:
+                fatalError()
+            }
+        }
     }
 
 }
