@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A25A03D2466DC68000DBAA0 /* APIRequest in Frameworks */ = {isa = PBXBuildFile; productRef = 6A25A03C2466DC68000DBAA0 /* APIRequest */; };
+		6A25A03F2466DD32000DBAA0 /* StringAPIDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A25A03E2466DD32000DBAA0 /* StringAPIDecoder.swift */; };
 		6A3F4FE5244BAFEA0052EB7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F4FE4244BAFEA0052EB7D /* AppDelegate.swift */; };
 		6A3F4FEE244BAFEE0052EB7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A3F4FED244BAFEE0052EB7D /* Assets.xcassets */; };
 		6A3F4FF1244BAFEE0052EB7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A3F4FEF244BAFEE0052EB7D /* LaunchScreen.storyboard */; };
 		6A3F4FFC244BB07D0052EB7D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F4FFB244BB07D0052EB7D /* TabBarController.swift */; };
-		6A3F4FFE244BB0B10052EB7D /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F4FFD244BB0B10052EB7D /* APIRequest.swift */; };
-		6A3F5000244BB0ED0052EB7D /* APIResponseStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F4FFF244BB0ED0052EB7D /* APIResponseStatus.swift */; };
 		6A3F5002244BB2910052EB7D /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F5001244BB2910052EB7D /* UploadViewController.swift */; };
 		6A3F5005244BB37D0052EB7D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F5004244BB37D0052EB7D /* StringExtension.swift */; };
 		6A3F5008244BB3C00052EB7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6A3F500A244BB3C00052EB7D /* Localizable.strings */; };
@@ -25,14 +25,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A25A03E2466DD32000DBAA0 /* StringAPIDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringAPIDecoder.swift; sourceTree = "<group>"; };
 		6A3F4FE1244BAFEA0052EB7D /* HiberLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiberLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A3F4FE4244BAFEA0052EB7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A3F4FED244BAFEE0052EB7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A3F4FF0244BAFEE0052EB7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A3F4FF2244BAFEE0052EB7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A3F4FFB244BB07D0052EB7D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		6A3F4FFD244BB0B10052EB7D /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
-		6A3F4FFF244BB0ED0052EB7D /* APIResponseStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseStatus.swift; sourceTree = "<group>"; };
 		6A3F5001244BB2910052EB7D /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		6A3F5004244BB37D0052EB7D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		6A3F5009244BB3C00052EB7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AB0B542244BC08700E403AE /* SQLite in Frameworks */,
+				6A25A03D2466DC68000DBAA0 /* APIRequest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,8 +113,7 @@
 		6A3F4FFA244BB0110052EB7D /* API */ = {
 			isa = PBXGroup;
 			children = (
-				6A3F4FFD244BB0B10052EB7D /* APIRequest.swift */,
-				6A3F4FFF244BB0ED0052EB7D /* APIResponseStatus.swift */,
+				6A25A03E2466DD32000DBAA0 /* StringAPIDecoder.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -155,6 +154,7 @@
 			name = HiberLink;
 			packageProductDependencies = (
 				6AB0B541244BC08700E403AE /* SQLite */,
+				6A25A03C2466DC68000DBAA0 /* APIRequest */,
 			);
 			productName = HiberLink;
 			productReference = 6A3F4FE1244BAFEA0052EB7D /* HiberLink.app */;
@@ -188,6 +188,7 @@
 			mainGroup = 6A3F4FD8244BAFEA0052EB7D;
 			packageReferences = (
 				6AB0B540244BC08700E403AE /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+				6A25A03B2466DC68000DBAA0 /* XCRemoteSwiftPackageReference "APIRequest.swift" */,
 			);
 			productRefGroup = 6A3F4FE2244BAFEA0052EB7D /* Products */;
 			projectDirPath = "";
@@ -216,17 +217,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A25A03F2466DD32000DBAA0 /* StringAPIDecoder.swift in Sources */,
 				6A3F4FE5244BAFEA0052EB7D /* AppDelegate.swift in Sources */,
 				6A3F500C244BB4420052EB7D /* UIColorExtension.swift in Sources */,
 				6A3F5002244BB2910052EB7D /* UploadViewController.swift in Sources */,
 				6A3F5005244BB37D0052EB7D /* StringExtension.swift in Sources */,
-				6A3F4FFE244BB0B10052EB7D /* APIRequest.swift in Sources */,
 				6A84C48724510ED800411174 /* LabelTableViewCell.swift in Sources */,
 				6AB0B546244BC3C300E403AE /* HistoryTableViewController.swift in Sources */,
 				6A3F4FFC244BB07D0052EB7D /* TabBarController.swift in Sources */,
 				6AB0B548244BC6DD00E403AE /* SubtitleTableViewCell.swift in Sources */,
 				6AB0B544244BC09300E403AE /* Database.swift in Sources */,
-				6A3F5000244BB0ED0052EB7D /* APIResponseStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,7 +379,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = ZL9396WK65;
 				INFOPLIST_FILE = HiberLink/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -402,7 +402,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = ZL9396WK65;
 				INFOPLIST_FILE = HiberLink/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,6 +440,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6A25A03B2466DC68000DBAA0 /* XCRemoteSwiftPackageReference "APIRequest.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GroupeMINASTE/APIRequest.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
 		6AB0B540244BC08700E403AE /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
@@ -451,6 +459,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6A25A03C2466DC68000DBAA0 /* APIRequest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6A25A03B2466DC68000DBAA0 /* XCRemoteSwiftPackageReference "APIRequest.swift" */;
+			productName = APIRequest;
+		};
 		6AB0B541244BC08700E403AE /* SQLite */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6AB0B540244BC08700E403AE /* XCRemoteSwiftPackageReference "SQLite.swift" */;

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import APIRequest
 
 class UploadViewController: UIViewController, UITextFieldDelegate {
     
@@ -114,7 +115,7 @@ class UploadViewController: UIViewController, UITextFieldDelegate {
             generate.isEnabled = false
             
             // Generate a link
-            APIRequest("POST", path: "/link.php").with(body: "link=\(url)").execute() { string, status in
+            APIRequest("POST", path: "/link.php").with(body: "link=\(url)".data(using: .utf8)).execute(String.self) { string, status in
                 // Check if request was sent
                 if let string = string {
                     // Show generated link

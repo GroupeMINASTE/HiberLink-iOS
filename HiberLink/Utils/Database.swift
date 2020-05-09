@@ -96,7 +96,9 @@ class Database {
         datas.synchronize()
         
         if savesCount == 10 || savesCount == 50 || savesCount % 100 == 0 {
-            SKStoreReviewController.requestReview()
+            if #available(iOS 10.3, *) {
+                SKStoreReviewController.requestReview()
+            }
         }
     }
     

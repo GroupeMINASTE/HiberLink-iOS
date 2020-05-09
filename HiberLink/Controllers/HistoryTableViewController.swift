@@ -22,6 +22,10 @@ class HistoryTableViewController: UITableViewController, HistoryDelegate {
         tableView.register(SubtitleTableViewCell.self, forCellReuseIdentifier: "subtitleCell")
         tableView.register(LabelTableViewCell.self, forCellReuseIdentifier: "labelCell")
         
+        // Auto resizing cells
+        tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableView.automaticDimension
+        
         // Clear button
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "history_clear".localized(), style: .plain, target: self, action: #selector(clear(_:)))
         
@@ -111,19 +115,35 @@ class HistoryTableViewController: UITableViewController, HistoryDelegate {
             switch indexPath.row {
             case 0:
                 if let url = URL(string: "https://hiberfile.com") {
-                    UIApplication.shared.open(url)
+                    if #available(iOS 10, *) {
+                        UIApplication.shared.open(url)
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
                 }
             case 1:
                 if let url = URL(string: "https://www.groupe-minaste.org") {
-                    UIApplication.shared.open(url)
+                    if #available(iOS 10, *) {
+                        UIApplication.shared.open(url)
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
                 }
             case 2:
                 if let url = URL(string: "https://weblate.groupe-minaste.org/projects/hiberlink/") {
-                    UIApplication.shared.open(url)
+                    if #available(iOS 10, *) {
+                        UIApplication.shared.open(url)
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
                 }
             case 3:
                 if let url = URL(string: "https://github.com/GroupeMINASTE/HiberLink-iOS") {
-                    UIApplication.shared.open(url)
+                    if #available(iOS 10, *) {
+                        UIApplication.shared.open(url)
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
                 }
             default:
                 fatalError()
