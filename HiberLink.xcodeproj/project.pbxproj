@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6A25A03D2466DC68000DBAA0 /* APIRequest in Frameworks */ = {isa = PBXBuildFile; productRef = 6A25A03C2466DC68000DBAA0 /* APIRequest */; };
 		6A25A03F2466DD32000DBAA0 /* StringAPIDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A25A03E2466DD32000DBAA0 /* StringAPIDecoder.swift */; };
+		6A25A0422466E010000DBAA0 /* MatomoTracker in Frameworks */ = {isa = PBXBuildFile; productRef = 6A25A0412466E010000DBAA0 /* MatomoTracker */; };
+		6A25A0452466E08C000DBAA0 /* MatomoTrackerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A25A0442466E08C000DBAA0 /* MatomoTrackerExtension.swift */; };
 		6A3F4FE5244BAFEA0052EB7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F4FE4244BAFEA0052EB7D /* AppDelegate.swift */; };
 		6A3F4FEE244BAFEE0052EB7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A3F4FED244BAFEE0052EB7D /* Assets.xcassets */; };
 		6A3F4FF1244BAFEE0052EB7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A3F4FEF244BAFEE0052EB7D /* LaunchScreen.storyboard */; };
@@ -26,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		6A25A03E2466DD32000DBAA0 /* StringAPIDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringAPIDecoder.swift; sourceTree = "<group>"; };
+		6A25A0442466E08C000DBAA0 /* MatomoTrackerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatomoTrackerExtension.swift; sourceTree = "<group>"; };
 		6A3F4FE1244BAFEA0052EB7D /* HiberLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiberLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A3F4FE4244BAFEA0052EB7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A3F4FED244BAFEE0052EB7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A25A0422466E010000DBAA0 /* MatomoTracker in Frameworks */,
 				6AB0B542244BC08700E403AE /* SQLite in Frameworks */,
 				6A25A03D2466DC68000DBAA0 /* APIRequest in Frameworks */,
 			);
@@ -121,6 +125,7 @@
 		6A3F5003244BB3680052EB7D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6A25A0442466E08C000DBAA0 /* MatomoTrackerExtension.swift */,
 				6A3F5004244BB37D0052EB7D /* StringExtension.swift */,
 				6A3F500B244BB4420052EB7D /* UIColorExtension.swift */,
 			);
@@ -155,6 +160,7 @@
 			packageProductDependencies = (
 				6AB0B541244BC08700E403AE /* SQLite */,
 				6A25A03C2466DC68000DBAA0 /* APIRequest */,
+				6A25A0412466E010000DBAA0 /* MatomoTracker */,
 			);
 			productName = HiberLink;
 			productReference = 6A3F4FE1244BAFEA0052EB7D /* HiberLink.app */;
@@ -189,6 +195,7 @@
 			packageReferences = (
 				6AB0B540244BC08700E403AE /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 				6A25A03B2466DC68000DBAA0 /* XCRemoteSwiftPackageReference "APIRequest.swift" */,
+				6A25A0402466E00F000DBAA0 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */,
 			);
 			productRefGroup = 6A3F4FE2244BAFEA0052EB7D /* Products */;
 			projectDirPath = "";
@@ -227,6 +234,7 @@
 				6A3F4FFC244BB07D0052EB7D /* TabBarController.swift in Sources */,
 				6AB0B548244BC6DD00E403AE /* SubtitleTableViewCell.swift in Sources */,
 				6AB0B544244BC09300E403AE /* Database.swift in Sources */,
+				6A25A0452466E08C000DBAA0 /* MatomoTrackerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +456,14 @@
 				minimumVersion = 1.1.1;
 			};
 		};
+		6A25A0402466E00F000DBAA0 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/matomo-org/matomo-sdk-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.2.0;
+			};
+		};
 		6AB0B540244BC08700E403AE /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
@@ -463,6 +479,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6A25A03B2466DC68000DBAA0 /* XCRemoteSwiftPackageReference "APIRequest.swift" */;
 			productName = APIRequest;
+		};
+		6A25A0412466E010000DBAA0 /* MatomoTracker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6A25A0402466E00F000DBAA0 /* XCRemoteSwiftPackageReference "matomo-sdk-ios" */;
+			productName = MatomoTracker;
 		};
 		6AB0B541244BC08700E403AE /* SQLite */ = {
 			isa = XCSwiftPackageProductDependency;

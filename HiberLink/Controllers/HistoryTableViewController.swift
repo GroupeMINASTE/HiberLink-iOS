@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MatomoTracker
 
 class HistoryTableViewController: UITableViewController, HistoryDelegate {
     
@@ -31,6 +32,11 @@ class HistoryTableViewController: UITableViewController, HistoryDelegate {
         
         // Load content
         loadContent()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // Tracking
+        MatomoTracker.shared.track(view: ["HistoryTableViewController"])
     }
     
     func loadContent() {

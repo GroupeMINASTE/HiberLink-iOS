@@ -8,6 +8,7 @@
 
 import UIKit
 import APIRequest
+import MatomoTracker
 
 class UploadViewController: UIViewController, UITextFieldDelegate {
     
@@ -106,6 +107,11 @@ class UploadViewController: UIViewController, UITextFieldDelegate {
         // Listen for keyboard changes
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardChanged(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardChanged(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // Tracking
+        MatomoTracker.shared.track(view: ["UploadViewController"])
     }
     
     @objc func buttonClicked(_ sender: UIButton) {
