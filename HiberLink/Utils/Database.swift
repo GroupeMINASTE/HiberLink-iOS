@@ -67,6 +67,12 @@ class Database {
     // Add a link
     func addLink(_ link: (String, String)) {
         do {
+            // Check that data doesn't exists yet
+            if let count = try db?.scalar(links.filter(short == link.0).count), count != 0 {
+                // Line already exists, return
+                return
+            }
+            
             // Insert data
             let _ = try db?.run(links.insert(short <- link.0, full <- link.1, generated <- Date()))
         } catch {
