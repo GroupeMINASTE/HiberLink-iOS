@@ -8,6 +8,7 @@
 
 import UIKit
 import APIRequest
+import MatomoTracker
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,6 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let url = userActivity.webpageURL, url.host == "hiber.link" {
             // Check if there are get parameters
             if let query = url.query {
+                // Tracking
+                MatomoTracker.shared.track(view: ["UIApplicationDelegate", "OpenLink", query])
+                
                 // Fetch target link
                 APIRequest("GET", path: "/index.php").with(name: query).execute(String.self) { string, status in
                     // Check the response
