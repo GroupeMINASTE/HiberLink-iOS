@@ -35,15 +35,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 APIRequest("GET", path: "/index.php").with(name: query).execute(String.self) { string, status in
                     // Check the response
                     if let string = string, let full = URL(string: string) {
-                        // Add url to history
-                        Database.current.addLink((url.absoluteString, full.absoluteString))
-                        
-                        // Open url
-                        if #available(iOS 10, *) {
-                            UIApplication.shared.open(full)
-                        } else {
-                            UIApplication.shared.openURL(full)
-                        }
+                        // Open an alert
+                        let alert = UIAlertController(title: "open_title".localized(), message: "open_description".localized().format(full.host ?? full.absoluteString), preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "open_open".localized(), style: .default) { _ in
+                            // Add url to history
+                            Database.current.addLink((url.absoluteString, full.absoluteString))
+                            
+                            // Notify delegate
+                            if let rootVC = self.window?.rootViewController as? TabBarController {
+                                rootVC.history.loadContent()
+                            }
+                            
+                            // Open url
+                            if #available(iOS 10, *) {
+                                UIApplication.shared.open(full)
+                            } else {
+                                UIApplication.shared.openURL(full)
+                            }
+                        })
+                        alert.addAction(UIAlertAction(title: "open_cancel".localized(), style: .cancel, handler: nil))
+                        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+                    } else {
+                        // URL not found or offline
+                        let alert = UIAlertController(title: "open_title".localized(), message: "open_error".localized(), preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "open_cancel".localized(), style: .cancel, handler: nil))
+                        self.window?.rootViewController?.present(alert, animated: true, completion: nil)
                     }
                 }
             }

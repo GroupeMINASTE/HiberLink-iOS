@@ -12,3 +12,8 @@
 "more_title" = "Más";
 "more_translate" = "Traducir";
 "more_source_code" = "Código fuente";
+"open_title" = "Abrir en elace";
+"open_description" = "¿Seguir hacia %@?";
+"open_error" = "¡Error: el enlace no existe, o no hay conneción!";
+"open_open" = "Abrir";
+"open_cancel" = "Cancelar";

@@ -20,3 +20,8 @@
 "more_title" = "More";
 "more_translate" = "Translate";
 "more_source_code" = "Source code";
+"open_title" = "Open a link";
+"open_description" = "Continue to %@?";
+"open_error" = "Error: the link doesn't exist, or your offline!";
+"open_open" = "Open";
+"open_cancel" = "Cancel";
