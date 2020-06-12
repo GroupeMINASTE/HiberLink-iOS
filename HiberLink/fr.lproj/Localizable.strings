@@ -22,6 +22,6 @@
 "more_source_code" = "Code source";
 "open_title" = "Ouvrir un lien";
 "open_description" = "Continuer vers %@ ?";
-"open_error" = "Erreur : le lien n'existe pas, ou vous êtes hors ligne !";
+"open_error" = "Erreur : le lien n'existe pas, ou vous êtes hors ligne !";
 "open_open" = "Ouvrir";
 "open_cancel" = "Annuler";
