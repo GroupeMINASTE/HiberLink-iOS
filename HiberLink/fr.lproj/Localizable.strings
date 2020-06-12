@@ -9,7 +9,7 @@
 "upload_title" = "Générer";
 "upload_input" = "Entrez une URL…";
 "upload_generate" = "Générer";
-"upload_generating" = "Gérénation…";
+"upload_generating" = "Génération...";
 "upload_output" = "Le lien généré apparaitra ici";
 "upload_copy" = "Copier le lien généré";
 "upload_error" = "Une erreur est survenue !";
